@@ -533,7 +533,7 @@ align-items: baseline ;
 
 .modal {
     position: relative;
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
@@ -544,8 +544,11 @@ align-items: baseline ;
     overflow-y: auto;
     background-color: var(--c-dairy);
     border-radius: 4px;
-    box-shadow: зі значенням 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
     padding: 72px 24px 24px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close {
@@ -572,10 +575,10 @@ align-items: baseline ;
 .modal-close:hover,
 .modal-close:focus {
     fill: var(--c-background);
-    background-color: var(--c-pressed-state);
+    background-color: var(--c-primary-brand);
     border: none;
 }
-.modal-close-icon:hover,
+.modal-close-icon:hover, 
 .modal-close-icon:focus {
     fill: var(--c-background);
 }
@@ -682,10 +685,12 @@ margin-bottom: 8px;
 .modal-checkbox {
     margin-bottom: 24px;
 }
-.checkbox-input:checked + .modal-checkbox-label .modal-span-icon {
+.checkbox-input:checked + .modal-checkbox-label .modal-span {
     background-color: var(--c-pressed-state);
     border: none;
-    stroke: var(--c-text-light);
+}
+.checkbox-input:checked+.modal-checkbox-label .modal-span .modal-span-icon {
+    fill: var(--c-text-light);
 }
 .modal-checkbox-label {
     color: var(--c-light-slate);
@@ -701,7 +706,7 @@ margin-bottom: 8px;
     border-radius: 2px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     display: inline-flex;
-    display: inline-flex;
+    align-items: center;
     justify-content: center;
     fill: transparent;
 }
