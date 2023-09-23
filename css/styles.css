@@ -686,7 +686,7 @@ margin-bottom: 8px;
 .modal-checkbox {
     margin-bottom: 24px;
 }
-.modal-checkbox input:checked +.modal-checkbox-label .modal-span {
+.checkbox-input:checked +.modal-checkbox-label span {
     background-color: var(--c-pressed-state);
     border: none;
     fill: var(--c-text-light);
