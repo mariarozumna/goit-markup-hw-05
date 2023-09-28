@@ -542,9 +542,7 @@ align-items: baseline ;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
     max-width: 408px;
-    min-height: 584px;
     width: 100%;
-    height: 100%;
     overflow-y: auto;
     background-color: var(--c-dairy);
     border-radius: 4px;
@@ -689,7 +687,10 @@ margin-bottom: 8px;
 .checkbox-input:checked+.modal-checkbox-label>.modal-span {
     background-color: var(--c-pressed-state);
     border: none;
-    fill: var(--c-text-light);
+    fill: var(--c-background);
+}
+.checkbox-input:checked+.modal-checkbox-label>.modal-span .modal-span-icon {
+    opacity: 1;
 }
 .modal-checkbox-label {
     color: var(--c-light-slate);
@@ -710,7 +711,7 @@ margin-bottom: 8px;
     fill: transparent;
 }
 .modal-span-icon {
-    fill: transparent;
+    stroke: transparent
 }
 .link-policy {
     color: var(--c-primary-brand);
